@@ -14,6 +14,7 @@ printarray(numbers, n);
 insertionSort(numbers, n);
 printf("After sorting:\n");
 printarray(numbers,n);
+printf("Done!");
 }
 void printarray(int array[], int size){
 for (int i=0; i<size; i++) {
