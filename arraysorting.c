@@ -14,13 +14,12 @@ void main()
         printf("Enter num %d: ", i + 1);
         scanf("%d", &numbers[i]);
     }
-    printarray(numbers, n);
-    insertionSort(numbers, n);
-    printf("After insertion sorting:\n");
-    printarray(numbers, n);
-    printf("Done! doing selection sort--\n");
-    selectionsort(numbers, n);
-    printarray(numbers, n);
+    printf("Your array:\n");
+    printarray(numbers,n);
+    selectionsort(numbers,n);
+    printf("After selectionsort:\n");
+    printarray(numbers,n);
+
 }
 void printarray(int array[], int size)
 {
@@ -46,19 +45,22 @@ void insertionSort(int array[], int size)
     }
 }
 // selection sort
-void selectionsort(int array[], int size){
-    int min_index, i,j;
-    for ( i = 0; i < size-1; i++)
+void selectionsort(int array[], int n){
+int min_index,i,j;
+for ( i = 0; i < n-1; i++)
+{
+    min_index=i;
+    for ( j = i+1; j < n; j++)
     {
-        min_index=i;
-        j=i+1;
-        while (array[j]<array[min_index])
+        if (array[min_index]>array[j])
         {
             min_index=j;
-            int temp=array[j];
-            array[j]=array[min_index];
-            array[min_index]=temp;
         }
-     
+        
     }
+    int temp=array[i];
+    array[i]=array[min_index];
+    array[min_index]=temp;
+}
+
 }
