@@ -49,7 +49,7 @@ int menu(){
     return ch;
 }
 int enque(int data){
-    if (rear>SIZE-1)
+    if (rear>=SIZE-1)
     {
         printf("Queue overflow!\n");
     }
